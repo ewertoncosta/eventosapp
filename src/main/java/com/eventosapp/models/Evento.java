@@ -2,6 +2,7 @@ package com.eventosapp.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "evento")
@@ -17,6 +18,9 @@ public class Evento implements Serializable {
     private String local;
     private String data;
     private String horario;
+
+    @OneToMany
+    private List<Convidado> convidados;
 
     public long getCodigo() {
         return codigo;

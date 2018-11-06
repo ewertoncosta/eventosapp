@@ -40,8 +40,9 @@ public class EventoController {
     @RequestMapping("/{codigo}")
     public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo){
         Evento evento = er.findByCodigo(codigo);
-        ModelAndView mv = new ModelAndView("detalhesEvento");
+        ModelAndView mv = new ModelAndView("evento/detalhesEvento");
         mv.addObject("evento",evento);
         return mv;
     }
+
 }
